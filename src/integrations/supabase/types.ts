@@ -14,71 +14,36 @@ export type Database = {
   }
   public: {
     Tables: {
-      habit_logs: {
+      jobs: {
         Row: {
-          created_at: string
-          date: string
-          habit_id: string
-          id: string
-          user_id: string
-        }
-        Insert: {
-          created_at?: string
-          date: string
-          habit_id: string
-          id?: string
-          user_id: string
-        }
-        Update: {
-          created_at?: string
-          date?: string
-          habit_id?: string
-          id?: string
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "habit_logs_habit_id_fkey"
-            columns: ["habit_id"]
-            isOneToOne: false
-            referencedRelation: "habits"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      habits: {
-        Row: {
-          color: string
+          company: string
           created_at: string
           description: string
-          frequency: Json
+          employer_id: string | null
           id: string
-          name: string
-          position: number
-          reminder_time: string | null
-          user_id: string
+          location: string
+          required_skills: string[]
+          title: string
         }
         Insert: {
-          color?: string
+          company: string
           created_at?: string
-          description?: string
-          frequency?: Json
+          description: string
+          employer_id?: string | null
           id?: string
-          name: string
-          position?: number
-          reminder_time?: string | null
-          user_id: string
+          location: string
+          required_skills?: string[]
+          title: string
         }
         Update: {
-          color?: string
+          company?: string
           created_at?: string
           description?: string
-          frequency?: Json
+          employer_id?: string | null
           id?: string
-          name?: string
-          position?: number
-          reminder_time?: string | null
-          user_id?: string
+          location?: string
+          required_skills?: string[]
+          title?: string
         }
         Relationships: []
       }
@@ -87,19 +52,76 @@ export type Database = {
           avatar_url: string | null
           created_at: string
           display_name: string | null
+          full_name: string | null
           id: string
         }
         Insert: {
           avatar_url?: string | null
           created_at?: string
           display_name?: string | null
+          full_name?: string | null
           id: string
         }
         Update: {
           avatar_url?: string | null
           created_at?: string
           display_name?: string | null
+          full_name?: string | null
           id?: string
+        }
+        Relationships: []
+      }
+      seeker_profiles: {
+        Row: {
+          created_at: string
+          cv_text: string | null
+          experience_years: number | null
+          headline: string | null
+          location: string | null
+          skills: string[]
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          cv_text?: string | null
+          experience_years?: number | null
+          headline?: string | null
+          location?: string | null
+          skills?: string[]
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          cv_text?: string | null
+          experience_years?: number | null
+          headline?: string | null
+          location?: string | null
+          skills?: string[]
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
         }
         Relationships: []
       }
@@ -108,10 +130,16 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "seeker" | "employer"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -238,6 +266,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["seeker", "employer"],
+    },
   },
 } as const
