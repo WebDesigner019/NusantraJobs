@@ -12,8 +12,8 @@ export const Route = createFileRoute("/seeker/")({
 });
 
 interface SeekerProfile {
-  headline: string;
-  location: string;
+  headline: string | null;
+  location: string | null;
   skills: string[];
 }
 

@@ -22,9 +22,9 @@ interface Job {
 
 interface SeekerCandidate {
   user_id: string;
-  headline: string;
-  location: string;
-  experience_years: number;
+  headline: string | null;
+  location: string | null;
+  experience_years: number | null;
   skills: string[];
   full_name?: string;
 }
