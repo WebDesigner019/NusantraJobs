@@ -8,50 +8,21 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { title: "Continuum — Build lasting habits" },
-      { name: "description", content: "A calm, focused habit tracker. Track streaks, visualize progress, and build your daily ritual." },
-      { name: "author", content: "Continuum" },
-      { property: "og:title", content: "Continuum — Build lasting habits" },
-      { property: "og:description", content: "A calm, focused habit tracker. Track streaks, visualize progress, and build your daily ritual." },
+      { title: "NusantaraJobs — Platform Pencocokan Kerja & Upskilling Berbasis AI" },
+      { name: "description", content: "NusantaraJobs membantu pencari kerja Indonesia menemukan lowongan yang tepat dan meningkatkan skill, dengan bantuan AI." },
+      { name: "author", content: "NusantaraJobs" },
+      { property: "og:title", content: "NusantaraJobs — Pencocokan Kerja Berbasis AI" },
+      { property: "og:description", content: "Unggah CV Anda, dapatkan rekomendasi pekerjaan dengan skor kecocokan, dan pelajari skill yang perlu ditingkatkan." },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/b9uXYmgdTyWTYhHfslbu4ZrHRZ73/social-images/social-1775640713838-continuum.webp" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/b9uXYmgdTyWTYhHfslbu4ZrHRZ73/social-images/social-1775640713838-continuum.webp" },
-      { name: "twitter:title", content: "Continuum — Build lasting habits" },
-      { name: "twitter:description", content: "A calm, focused habit tracker. Track streaks, visualize progress, and build your daily ritual." },
+      { name: "twitter:title", content: "NusantaraJobs — Pencocokan Kerja Berbasis AI" },
+      { name: "twitter:description", content: "Unggah CV Anda, dapatkan rekomendasi pekerjaan dengan skor kecocokan, dan pelajari skill yang perlu ditingkatkan." },
     ],
     links: [
-      {
-        rel: "preconnect",
-        href: "https://fonts.googleapis.com",
-      },
-      {
-        rel: "preconnect",
-        href: "https://fonts.gstatic.com",
-        crossOrigin: "anonymous",
-      },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap",
-      },
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-    ],
-    scripts: [
-      {
-        children: `
-          (function() {
-            var theme = localStorage.getItem('continuum_theme') || 'light';
-            if (theme === 'system') {
-              theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            }
-            if (theme === 'dark') document.documentElement.classList.add('dark');
-          })();
-        `,
-      },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" },
+      { rel: "stylesheet", href: appCss },
     ],
   }),
   shellComponent: RootShell,
@@ -60,7 +31,7 @@ export const Route = createRootRoute({
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="id">
       <head>
         <HeadContent />
       </head>
@@ -75,9 +46,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 function RootComponent() {
   return (
     <>
-      <div className="animate-page-enter">
-        <Outlet />
-      </div>
+      <Outlet />
       <Toaster position="top-center" />
     </>
   );
