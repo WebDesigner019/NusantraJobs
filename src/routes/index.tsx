@@ -179,7 +179,7 @@ function Hero() {
             </Link>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs text-white/60">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs text-white/60">
             <span className="inline-flex items-center gap-2">
               <CheckCircle2 className="h-3.5 w-3.5 text-[#FDAA3E]" />
               Gratis untuk pencari kerja
@@ -196,7 +196,7 @@ function Hero() {
         </div>
 
         {/* Stats strip */}
-        <div className="mt-20 grid max-w-3xl grid-cols-3 gap-6 border-t border-white/10 pt-10 sm:gap-10">
+        <div className="mx-auto mt-20 grid max-w-3xl grid-cols-3 gap-6 border-t border-white/10 pt-10 sm:gap-10">
           <Stat value="1.2K+" label="Lowongan aktif" />
           <Stat value="85%" label="Akurasi pencocokan" />
           <Stat value="40+" label="Mitra perusahaan" />
