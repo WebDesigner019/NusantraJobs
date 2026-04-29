@@ -99,7 +99,7 @@ function Hero() {
 
       {/* Sparkles brand showcase */}
       <div className="relative mx-auto flex max-w-6xl flex-col items-center px-6 pt-12 lg:pt-16">
-        <div className="relative h-[180px] w-full max-w-[40rem] sm:h-[220px]">
+        <div className="relative h-[160px] w-full max-w-[40rem] sm:h-[200px]">
           <h2
             className="relative z-20 text-center text-5xl font-bold tracking-tight text-white sm:text-7xl lg:text-8xl"
             style={{
@@ -111,14 +111,14 @@ function Hero() {
             Nusantara<span className="text-[#FDAA3E]">Jobs</span>
           </h2>
 
-          {/* Gradient lines under the wordmark */}
-          <div className="absolute inset-x-12 top-[58%] h-[2px] w-[calc(100%-6rem)] bg-gradient-to-r from-transparent via-[#FDAA3E] to-transparent blur-sm" />
-          <div className="absolute inset-x-12 top-[58%] h-px w-[calc(100%-6rem)] bg-gradient-to-r from-transparent via-[#FDAA3E] to-transparent" />
-          <div className="absolute inset-x-1/4 top-[58%] h-[5px] w-1/2 bg-gradient-to-r from-transparent via-white to-transparent blur-sm" />
-          <div className="absolute inset-x-1/4 top-[58%] h-px w-1/2 bg-gradient-to-r from-transparent via-white to-transparent" />
+          {/* Gradient lines flush with the baseline of the wordmark */}
+          <div className="absolute inset-x-12 bottom-[28%] h-[2px] w-[calc(100%-6rem)] bg-gradient-to-r from-transparent via-[#FDAA3E] to-transparent blur-sm" />
+          <div className="absolute inset-x-12 bottom-[28%] h-px w-[calc(100%-6rem)] bg-gradient-to-r from-transparent via-[#FDAA3E] to-transparent" />
+          <div className="absolute inset-x-1/4 bottom-[28%] h-[5px] w-1/2 bg-gradient-to-r from-transparent via-white to-transparent blur-sm" />
+          <div className="absolute inset-x-1/4 bottom-[28%] h-px w-1/2 bg-gradient-to-r from-transparent via-white to-transparent" />
 
-          {/* Sparkles */}
-          <div className="absolute inset-x-0 top-[58%] h-[60%] w-full">
+          {/* Sparkles flowing from the line downward */}
+          <div className="absolute inset-x-0 bottom-0 h-[40%] w-full">
             <SparklesCore
               background="transparent"
               minSize={0.4}
@@ -128,15 +128,6 @@ function Hero() {
               particleColor="#FDAA3E"
             />
           </div>
-
-          {/* Radial mask to soften edges */}
-          <div
-            className="pointer-events-none absolute inset-0"
-            style={{
-              background:
-                "radial-gradient(420px 220px at 50% 75%, transparent 20%, #050d0a 80%)",
-            }}
-          />
         </div>
       </div>
 
