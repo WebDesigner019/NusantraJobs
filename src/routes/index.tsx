@@ -15,6 +15,8 @@ import {
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import shadowBg from "@/assets/shadow-bg.jpg";
+import logo from "@/assets/logo.png";
+import { SparklesCore } from "@/components/ui/sparkles";
 
 export const Route = createFileRoute("/")({
   component: LandingPage,
@@ -95,21 +97,64 @@ function Hero() {
 
       <Nav transparent />
 
-      <div className="relative mx-auto max-w-6xl px-6 pt-20 pb-28 lg:pt-28 lg:pb-36">
-        <div className="max-w-3xl">
+      {/* Sparkles brand showcase */}
+      <div className="relative mx-auto flex max-w-6xl flex-col items-center px-6 pt-12 lg:pt-16">
+        <div className="relative h-[180px] w-full max-w-[40rem] sm:h-[220px]">
+          <h2
+            className="relative z-20 text-center text-5xl font-bold tracking-tight text-white sm:text-7xl lg:text-8xl"
+            style={{
+              fontFamily: "'Space Grotesk', 'Plus Jakarta Sans', sans-serif",
+              letterSpacing: "-0.04em",
+              lineHeight: 1,
+            }}
+          >
+            Nusantara<span className="text-[#FDAA3E]">Jobs</span>
+          </h2>
+
+          {/* Gradient lines under the wordmark */}
+          <div className="absolute inset-x-12 top-[58%] h-[2px] w-[calc(100%-6rem)] bg-gradient-to-r from-transparent via-[#FDAA3E] to-transparent blur-sm" />
+          <div className="absolute inset-x-12 top-[58%] h-px w-[calc(100%-6rem)] bg-gradient-to-r from-transparent via-[#FDAA3E] to-transparent" />
+          <div className="absolute inset-x-1/4 top-[58%] h-[5px] w-1/2 bg-gradient-to-r from-transparent via-white to-transparent blur-sm" />
+          <div className="absolute inset-x-1/4 top-[58%] h-px w-1/2 bg-gradient-to-r from-transparent via-white to-transparent" />
+
+          {/* Sparkles */}
+          <div className="absolute inset-x-0 top-[58%] h-[60%] w-full">
+            <SparklesCore
+              background="transparent"
+              minSize={0.4}
+              maxSize={1.2}
+              particleDensity={1100}
+              className="h-full w-full"
+              particleColor="#FDAA3E"
+            />
+          </div>
+
+          {/* Radial mask to soften edges */}
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(420px 220px at 50% 75%, transparent 20%, #050d0a 80%)",
+            }}
+          />
+        </div>
+      </div>
+
+      <div className="relative mx-auto max-w-6xl px-6 pt-4 pb-28 lg:pb-36">
+        <div className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-white/80 backdrop-blur">
             <Sparkles className="h-3.5 w-3.5 text-[#FDAA3E]" />
             Pencocokan kerja cerdas untuk talenta Indonesia
           </div>
           <h1
-            className="mt-7 text-[2.6rem] font-bold tracking-tight text-white sm:text-5xl lg:text-[4rem]"
-            style={{ lineHeight: "1.02", letterSpacing: "-0.02em" }}
+            className="mt-7 text-[2.4rem] font-bold tracking-tight text-white sm:text-5xl lg:text-[3.6rem]"
+            style={{ lineHeight: "1.05", letterSpacing: "-0.02em" }}
           >
             Pekerjaan yang tepat.<br />
             <span className="text-[#FDAA3E]">Skill yang siap pakai.</span>
           </h1>
           <p
-            className="mt-7 max-w-2xl text-lg text-white/75"
+            className="mx-auto mt-7 max-w-2xl text-lg text-white/75"
             style={{ lineHeight: "1.6" }}
           >
             NusantaraJobs menghubungkan pencari kerja Indonesia dengan
@@ -117,7 +162,7 @@ function Hero() {
             peningkatan skill yang masih kurang lewat kursus terkurasi.
           </p>
 
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               to="/login"
               className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#FDAA3E] px-7 py-3.5 text-sm font-bold text-slate-900 shadow-[0_10px_40px_-10px_rgba(253,170,62,0.6)] transition hover:bg-[#fdb95e] active:scale-[0.97]"
@@ -134,7 +179,7 @@ function Hero() {
             </Link>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs text-white/60">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs text-white/60">
             <span className="inline-flex items-center gap-2">
               <CheckCircle2 className="h-3.5 w-3.5 text-[#FDAA3E]" />
               Gratis untuk pencari kerja
@@ -151,7 +196,7 @@ function Hero() {
         </div>
 
         {/* Stats strip */}
-        <div className="mt-20 grid max-w-3xl grid-cols-3 gap-6 border-t border-white/10 pt-10 sm:gap-10">
+        <div className="mx-auto mt-20 grid max-w-3xl grid-cols-3 gap-6 border-t border-white/10 pt-10 sm:gap-10">
           <Stat value="1.2K+" label="Lowongan aktif" />
           <Stat value="85%" label="Akurasi pencocokan" />
           <Stat value="40+" label="Mitra perusahaan" />
@@ -181,9 +226,8 @@ function Nav({ transparent = false }: { transparent?: boolean }) {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link to="/" className="flex items-center gap-2.5">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#FDAA3E]">
-            <Briefcase className="h-4 w-4 text-slate-900" strokeWidth={2.5} />
-          </div>
+          <img src={logo} alt="NusantaraJobs" className="h-8 w-8" width={32} height={32} />
+
           <span
             className={`font-bold tracking-tight ${
               transparent ? "text-white" : "text-slate-900"
@@ -548,9 +592,8 @@ function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
             <Link to="/" className="inline-flex items-center gap-2.5">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#FDAA3E]">
-                <Briefcase className="h-4 w-4 text-slate-900" strokeWidth={2.5} />
-              </div>
+              <img src={logo} alt="NusantaraJobs" className="h-8 w-8" width={32} height={32} loading="lazy" />
+
               <span className="font-bold tracking-tight text-slate-900">NusantaraJobs</span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-600">
