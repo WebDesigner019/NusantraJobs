@@ -226,9 +226,8 @@ function Nav({ transparent = false }: { transparent?: boolean }) {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link to="/" className="flex items-center gap-2.5">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#FDAA3E]">
-            <Briefcase className="h-4 w-4 text-slate-900" strokeWidth={2.5} />
-          </div>
+          <img src={logo} alt="NusantaraJobs" className="h-8 w-8" width={32} height={32} />
+
           <span
             className={`font-bold tracking-tight ${
               transparent ? "text-white" : "text-slate-900"
@@ -593,9 +592,8 @@ function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
             <Link to="/" className="inline-flex items-center gap-2.5">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#FDAA3E]">
-                <Briefcase className="h-4 w-4 text-slate-900" strokeWidth={2.5} />
-              </div>
+              <img src={logo} alt="NusantaraJobs" className="h-8 w-8" width={32} height={32} loading="lazy" />
+
               <span className="font-bold tracking-tight text-slate-900">NusantaraJobs</span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-600">
