@@ -19,9 +19,11 @@ export const Route = createRootRoute({
       { name: "twitter:description", content: "Unggah CV Anda, dapatkan rekomendasi pekerjaan dengan skor kecocokan, dan pelajari skill yang perlu ditingkatkan." },
     ],
     links: [
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "apple-touch-icon", href: "/favicon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" },
       { rel: "stylesheet", href: appCss },
     ],
   }),
