@@ -98,52 +98,50 @@ function Hero() {
 
       <Nav transparent />
 
-      {/* Sparkles brand showcase */}
+      {/* Vapor brand showcase */}
       <div className="relative mx-auto flex max-w-6xl flex-col items-center px-6 pt-12 lg:pt-16">
-        <div className="relative h-[160px] w-full max-w-[40rem] sm:h-[200px]">
-          <h2
-            className="relative z-20 text-center text-5xl font-bold tracking-tight text-white sm:text-7xl lg:text-8xl"
-            style={{
-              fontFamily: "'Space Grotesk', 'Plus Jakarta Sans', sans-serif",
-              letterSpacing: "-0.04em",
-              lineHeight: 1,
-            }}
-          >
-            Nusantara<span className="text-[#FDAA3E]">Jobs</span>
-          </h2>
-
-          {/* Gradient lines flush with the baseline of the wordmark */}
-          <div className="absolute inset-x-12 bottom-[28%] h-[2px] w-[calc(100%-6rem)] bg-gradient-to-r from-transparent via-[#FDAA3E] to-transparent blur-sm" />
-          <div className="absolute inset-x-12 bottom-[28%] h-px w-[calc(100%-6rem)] bg-gradient-to-r from-transparent via-[#FDAA3E] to-transparent" />
-          <div className="absolute inset-x-1/4 bottom-[28%] h-[5px] w-1/2 bg-gradient-to-r from-transparent via-white to-transparent blur-sm" />
-          <div className="absolute inset-x-1/4 bottom-[28%] h-px w-1/2 bg-gradient-to-r from-transparent via-white to-transparent" />
-
-          {/* Sparkles flowing from the line downward */}
-          <div className="absolute inset-x-0 bottom-0 h-[40%] w-full">
-            <SparklesCore
-              background="transparent"
-              minSize={0.4}
-              maxSize={1.2}
-              particleDensity={1100}
-              className="h-full w-full"
-              particleColor="#FDAA3E"
+        <div className="relative w-full max-w-[44rem]">
+          {/* Vapor text canvas */}
+          <div className="relative h-[110px] w-full sm:h-[150px] lg:h-[180px]">
+            <VaporizeTextCycle
+              texts={["NusantaraJobs"]}
+              font={{
+                fontFamily: "'Space Grotesk', 'Plus Jakarta Sans', sans-serif",
+                fontSize: "92px",
+                fontWeight: 700,
+              }}
+              color="rgb(255,255,255)"
+              spread={4}
+              density={6}
+              animation={{ vaporizeDuration: 2.2, fadeInDuration: 1, waitDuration: 1.2 }}
+              direction="left-to-right"
+              alignment="center"
+              tag={VaporTag.H2}
             />
+          </div>
+
+          {/* Gradient lines flush to the bottom of the wordmark (no gap) */}
+          <div className="relative -mt-1 h-px w-full">
+            <div className="absolute inset-x-12 top-0 h-[2px] w-[calc(100%-6rem)] bg-gradient-to-r from-transparent via-[#FDAA3E] to-transparent blur-sm" />
+            <div className="absolute inset-x-12 top-0 h-px w-[calc(100%-6rem)] bg-gradient-to-r from-transparent via-[#FDAA3E] to-transparent" />
+            <div className="absolute inset-x-1/4 top-0 h-[5px] w-1/2 bg-gradient-to-r from-transparent via-white to-transparent blur-sm" />
+            <div className="absolute inset-x-1/4 top-0 h-px w-1/2 bg-gradient-to-r from-transparent via-white to-transparent" />
           </div>
         </div>
       </div>
 
-      <div className="relative mx-auto max-w-6xl px-6 pt-4 pb-28 lg:pb-36">
+      <div className="relative mx-auto max-w-6xl px-6 pt-8 pb-28 lg:pb-36">
         <div className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-white/80 backdrop-blur">
             <Sparkles className="h-3.5 w-3.5 text-[#FDAA3E]" />
             Pencocokan kerja cerdas untuk talenta Indonesia
           </div>
           <h1
-            className="mt-7 text-[2.4rem] font-bold tracking-tight text-white sm:text-5xl lg:text-[3.6rem]"
-            style={{ lineHeight: "1.05", letterSpacing: "-0.02em" }}
+            className="mt-7 text-[2rem] font-bold tracking-tight text-white sm:text-[2.6rem] lg:text-5xl"
+            style={{ lineHeight: "1.1", letterSpacing: "-0.02em" }}
           >
-            Pekerjaan yang tepat.<br />
-            <span className="text-[#FDAA3E]">Skill yang siap pakai.</span>
+            <span className="whitespace-nowrap">Pekerjaan yang tepat.</span><br />
+            <span className="whitespace-nowrap text-[#FDAA3E]">Skill yang siap pakai.</span>
           </h1>
           <p
             className="mx-auto mt-7 max-w-2xl text-lg text-white/75"
