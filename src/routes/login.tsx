@@ -1,6 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import { Briefcase, Mail, Lock, Eye, EyeOff, User, Building2 } from "lucide-react";
+import { Mail, Lock, Eye, EyeOff, User, Building2 } from "lucide-react";
+import logo from "@/assets/logo.png";
 import { toast } from "sonner";
 
 async function getSupabase() {
@@ -107,9 +108,7 @@ function LoginPage() {
     <div className="min-h-screen flex items-center justify-center px-5 bg-gradient-to-b from-amber-50/40 via-white to-white">
       <div className="max-w-md w-full">
         <Link to="/" className="flex items-center justify-center gap-2.5 mb-8 hover:opacity-80 transition">
-          <div className="w-8 h-8 rounded-lg bg-[#FDAA3E] flex items-center justify-center">
-            <Briefcase className="w-4 h-4 text-slate-900" strokeWidth={2.5} />
-          </div>
+          <img src={logo} alt="NusantaraJobs" className="h-10 w-10" width={40} height={40} />
           <span className="text-xl font-bold text-slate-900 tracking-tight">NusantaraJobs</span>
         </Link>
 

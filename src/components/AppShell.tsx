@@ -1,6 +1,7 @@
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
-import { Briefcase, LogOut, Upload, LayoutDashboard, Search, FilePlus2, ListChecks } from "lucide-react";
+import { LogOut, Upload, LayoutDashboard, Search, FilePlus2, ListChecks } from "lucide-react";
+import logo from "@/assets/logo.png";
 import { useAuth } from "@/hooks/use-auth";
 
 interface AppShellProps {
@@ -67,10 +68,8 @@ export function AppShell({ children, variant }: AppShellProps) {
       <header className="sticky top-0 z-30 bg-white border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between gap-6">
           <Link to="/" className="flex items-center gap-2.5 flex-shrink-0">
-            <div className="w-8 h-8 rounded-lg bg-[#FDAA3E] flex items-center justify-center">
-              <Briefcase className="w-4 h-4 text-slate-900" strokeWidth={2.5} />
-            </div>
-            <span className="font-bold text-slate-900 hidden sm:inline">NusantaraJobs</span>
+            <img src={logo} alt="NusantaraJobs" className="h-9 w-9" width={36} height={36} />
+            <span className="font-bold text-slate-900 hidden sm:inline tracking-tight">NusantaraJobs</span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-1">
