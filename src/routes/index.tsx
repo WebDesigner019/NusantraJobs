@@ -121,7 +121,7 @@ function Hero() {
           </div>
 
           {/* Gradient lines flush to the bottom of the wordmark (no gap) */}
-          <div className="relative -mt-1 h-px w-full">
+          <div className="relative -mt-[34px] h-px w-full sm:-mt-[46px] lg:-mt-[58px]">
             <div className="absolute inset-x-12 top-0 h-[2px] w-[calc(100%-6rem)] bg-gradient-to-r from-transparent via-[#FDAA3E] to-transparent blur-sm" />
             <div className="absolute inset-x-12 top-0 h-px w-[calc(100%-6rem)] bg-gradient-to-r from-transparent via-[#FDAA3E] to-transparent" />
             <div className="absolute inset-x-1/4 top-0 h-[5px] w-1/2 bg-gradient-to-r from-transparent via-white to-transparent blur-sm" />
