@@ -17,6 +17,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 import shadowBg from "@/assets/shadow-bg.jpg";
 import logo from "@/assets/logo.png";
 import { SparklesCore } from "@/components/ui/sparkles";
+import VaporizeTextCycle, { Tag as VaporTag } from "@/components/ui/vapour-text-effect";
 
 export const Route = createFileRoute("/")({
   component: LandingPage,
