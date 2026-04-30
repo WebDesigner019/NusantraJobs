@@ -41,14 +41,15 @@ function LoginPage() {
   const handleGoogleSignIn = async () => {
     setGoogleLoading(true);
     try {
-      const { lovable } = await import("@/integrations/lovable/index");
-      const result = await lovable.auth.signInWithOAuth("google", {
-        redirect_uri: `${window.location.origin}/seeker`,
+      const supabase = await getSupabase();
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+          redirectTo: `${window.location.origin}/seeker`,
+        },
       });
-      if (result.error) {
-        toast.error(result.error instanceof Error ? result.error.message : "Login Google gagal");
-      } else if (!result.redirected) {
-        await routeAfterLogin();
+      if (error) {
+        toast.error(error.message || "Login Google gagal");
       }
     } catch (err: any) {
       toast.error(err.message || "Login Google gagal");
